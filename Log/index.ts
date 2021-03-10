@@ -9,7 +9,7 @@ export interface Log {
 	agent?: authly.Identifier
 	merchant: authly.Identifier
 	client?: string
-	resource: { method: LogMethod; url: string }
+	resource: { method: LogMethod; location: string }
 	created: isoly.DateTime
 	entries: LogEntry[]
 }
@@ -24,7 +24,7 @@ export namespace Log {
 			(value.client == undefined || typeof value.client == "string") &&
 			typeof value.resource == "object" &&
 			LogMethod.is(value.resource.method) &&
-			typeof value.resource.url == "string" &&
+			typeof value.resource.location == "string" &&
 			isoly.DateTime.is(value.created) &&
 			Array.isArray(value.entries) &&
 			value.entries.every(LogEntry.is)
