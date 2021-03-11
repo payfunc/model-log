@@ -7,7 +7,7 @@ export namespace Entry {
 	export function is(value: Entry | any): value is Entry {
 		return (
 			typeof value == "object" &&
-			["trace", "log", "warning", "exception"].some(l => l == value.level) &&
+			["trace", "log", "warning", "error", "exception"].some(l => l == value.level) &&
 			typeof value.point == "string" &&
 			typeof value.data == "object" &&
 			Object.keys(value.data).every(key => typeof key == "string")
