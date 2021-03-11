@@ -1,6 +1,6 @@
 {
 	"name": "@payfunc/model-log",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Model library for Logs",
 	"author": "PayFunc",
 	"license": "MIT",
